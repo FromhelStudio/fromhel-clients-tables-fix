@@ -5,6 +5,7 @@ import (
 	"log"
 	"os"
 
+	"github.com/FromhelStudio/fromhel-clients-tables-fix/usecases"
 	"github.com/joho/godotenv"
 	"go.mongodb.org/mongo-driver/mongo"
 	"go.mongodb.org/mongo-driver/mongo/options"
@@ -32,4 +33,6 @@ func main() {
 			panic(err)
 		}
 	}()
+
+	usecases.Migrate(conn)
 }
